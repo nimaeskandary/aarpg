@@ -13,18 +13,19 @@ signal direction_changed_signal (new_direction: Vector2)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GlobalPlayerManager.player = self
 	state_machine.init(self)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	direction = Vector2(
 		Input.get_axis("left", "right"),
 		Input.get_axis("up", "down")
 		).normalized()
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	move_and_slide()
 
 
@@ -32,8 +33,8 @@ func set_direction() -> bool:
 	if direction == Vector2.ZERO:
 		return false
 	# get normalized direction angle, and map to an index in dir_4, bias towards cardinal direction to honor the first pressed key
-	var direction_id: int = int(round((direction + cardinal_direction * 0.1).angle() / TAU * DIR_4.size()))
-	var new_direction = DIR_4[direction_id]
+	var direction_id: int      = int(round((direction + cardinal_direction * 0.1).angle() / TAU * DIR_4.size()))
+	var new_direction: Vector2 = DIR_4[direction_id]
 	if new_direction == cardinal_direction:
 		return false
 	cardinal_direction = new_direction

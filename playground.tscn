@@ -8,6 +8,9 @@
 [node name="Playground" type="Node2D"]
 y_sort_enabled = true
 
+[node name="Player" parent="." instance=ExtResource("1_a22in")]
+position = Vector2(243, 143)
+
 [node name="World" type="Node2D" parent="."]
 
 [node name="Grass-01" parent="World" instance=ExtResource("2_6e4sq")]
@@ -32,5 +35,11 @@ position = Vector2(351, 107)
 [node name="Slime" parent="Enemies" instance=ExtResource("3_fluyw")]
 position = Vector2(255, 60)
 
-[node name="Player" parent="." instance=ExtResource("1_a22in")]
-position = Vector2(243, 143)
+[node name="Slime2" parent="Enemies" instance=ExtResource("3_fluyw")]
+position = Vector2(183, 251)
+
+[node name="Slime3" parent="Enemies" instance=ExtResource("3_fluyw")]
+position = Vector2(414, 135)
+
+[node name="Slime4" parent="Enemies" instance=ExtResource("3_fluyw")]
+position = Vector2(114, 181)

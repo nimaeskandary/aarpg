@@ -9,12 +9,10 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
 func take_damage(damage: int) -> void:
-	# TODO remove me
-	print("Take Damage", damage)
 	damaged_signal.emit(damage)
  
