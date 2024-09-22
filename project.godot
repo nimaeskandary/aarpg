@@ -15,6 +15,10 @@ run/main_scene="res://playground.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalLevelManager="*res://Globals/global_level_manager.gd"
+
 [display]
 
 window/size/viewport_width=480
@@ -61,7 +65,7 @@ attack={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="PlayerHurt"
 2d_physics/layer_5="Walls"
-2d_physics/layer_9="EnemyName"
+2d_physics/layer_9="Enemy"
 
 [rendering]
 
