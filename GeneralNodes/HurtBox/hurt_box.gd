@@ -1,5 +1,6 @@
 class_name HurtBox extends Area2D
 
+
 @export var damage: int = 1
 
 
@@ -15,4 +16,4 @@ func _process(_delta):
 
 func on_enter(a: Area2D) -> void:
 	if a is HitBox:
-		a.take_damage(damage)
+		a.take_damage(self)

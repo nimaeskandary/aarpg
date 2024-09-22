@@ -3,8 +3,8 @@ class_name Enemy extends CharacterBody2D
 @export var hp: int = 3
 
 signal direction_changed_signal(new_direction: Vector2)
-signal enemy_damaged_signal()
-signal enemy_destroyed_signed()
+signal enemy_damaged_signal(hurt_box: HurtBox)
+signal enemy_destroyed_signed(hurt_box: HurtBox)
 
 const DIR_4: Array[Vector2] = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
@@ -28,11 +28,11 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 
@@ -65,11 +65,11 @@ func anim_direction() -> String:
 		return "side"
 
 
-func take_damage(damage: int) -> void:
+func take_damage(hurt_box: HurtBox) -> void:
 	if invulnerable:
 		return
-	hp -= damage
+	hp -= hurt_box.damage
 	if hp > 0:
-		enemy_damaged_signal.emit()
+		enemy_damaged_signal.emit(hurt_box)
 	else:
-		enemy_destroyed_signed.emit()
+		enemy_destroyed_signed.emit(hurt_box)

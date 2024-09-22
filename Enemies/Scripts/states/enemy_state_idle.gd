@@ -32,5 +32,5 @@ func process(delta: float) -> EnemyState:
 	return null
 
 
-func physics(delta: float) -> EnemyState:
+func physics(_delta: float) -> EnemyState:
 	return null

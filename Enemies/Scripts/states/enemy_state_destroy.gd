@@ -1,11 +1,13 @@
-class_name EnemyStateDestroy extends EnemyState
-
+class_name EnemyStateDestroy
+extends EnemyState
 
 @export var anim_name: String = "destroy"
 @export var knockback_speed: float = 200.0
 @export var decelerate_speed: float = 10.0
 
+@onready var hurt_box: HurtBox = $"../../HurtBox"
 
+var damage_position: Vector2
 var direction: Vector2
 
 
@@ -15,7 +17,9 @@ func init() -> void:
 
 func enter() -> void:
 	enemy.invulnerable = true
-	direction = enemy.global_position.direction_to(enemy.player.global_position)
+	hurt_box.set_deferred("monitorable", false)
+	hurt_box.set_deferred("monitoring", false)
+	direction = enemy.global_position.direction_to(damage_position)
 	enemy.set_direction(direction)
 	enemy.velocity = direction * -knockback_speed
 	enemy.update_animation(anim_name)
@@ -31,11 +35,12 @@ func process(delta: float) -> EnemyState:
 	return null
 
 
-func physics(delta: float) -> EnemyState:
+func physics(_delta: float) -> EnemyState:
 	return null
 
 
-func on_enemy_destroyed() -> void:
+func on_enemy_destroyed(hb: HurtBox) -> void:
+	damage_position = hb.global_position
 	state_machine.change_state(self)
 
 

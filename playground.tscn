@@ -43,3 +43,24 @@ position = Vector2(414, 135)
 
 [node name="Slime4" parent="Enemies" instance=ExtResource("3_fluyw")]
 position = Vector2(114, 181)
+
+[node name="Slime5" parent="Enemies" instance=ExtResource("3_fluyw")]
+position = Vector2(180, 130)
+
+[node name="Slime6" parent="Enemies" instance=ExtResource("3_fluyw")]
+position = Vector2(277, 262)
+
+[node name="Slime7" parent="Enemies" instance=ExtResource("3_fluyw")]
+position = Vector2(348, 64)
+
+[node name="Slime8" parent="Enemies" instance=ExtResource("3_fluyw")]
+position = Vector2(183, 44)
+
+[node name="Slime9" parent="Enemies" instance=ExtResource("3_fluyw")]
+position = Vector2(44, 166)
+
+[node name="Slime10" parent="Enemies" instance=ExtResource("3_fluyw")]
+position = Vector2(460, 100)
+
+[node name="Slime11" parent="Enemies" instance=ExtResource("3_fluyw")]
+position = Vector2(90, 241)

@@ -19,7 +19,7 @@ func init() -> void:
 
 func enter() -> void:
 	timer = randi_range(state_cycles_min, state_cycles_max) * state_animation_duration
-	var direction: Vector2 = enemy.DIR_4[randi_range(0, 3)]
+	direction = enemy.DIR_4[randi_range(0, 3)]
 	enemy.velocity = direction * wander_speed
 	enemy.set_direction(direction)
 	enemy.update_animation(anim_name)
@@ -36,5 +36,5 @@ func process(delta: float) -> EnemyState:
 	return null
 
 
-func physics(delta: float) -> EnemyState:
+func physics(_delta: float) -> EnemyState:
 	return null
