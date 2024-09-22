@@ -8,6 +8,8 @@ var direction: Vector2 = Vector2.ZERO
 @onready var state_machine: PlayerStateMachine = $StateMachine
 
 
+signal direction_changed_signal (new_direction: Vector2)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	state_machine.init(self)
@@ -36,6 +38,7 @@ func set_direction() -> bool:
 	if new_direction == cardinal_direction:
 		return false
 	cardinal_direction = new_direction
+	direction_changed_signal.emit(new_direction)
 	# scaling instead of setting flip horizontal flag so that child nodes also are flipped
 	sprite.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
 	return true
