@@ -6,8 +6,3 @@ func _ready():
 	if GlobalPlayerManager.player_spawned == false:
 		GlobalPlayerManager.set_player_position(global_position)
 		GlobalPlayerManager.player_spawned = true
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

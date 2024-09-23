@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://g2pv7euw5bvf" path="res://Levels/PlayerSpawn.tscn" id="4_b4pla"]
 
 [node name="Playground" type="Node2D"]
-y_sort_enabled = true
 script = ExtResource("1_deoxo")
 
 [node name="World" type="Node2D" parent="."]
