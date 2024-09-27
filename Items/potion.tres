@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://dd7fphhb6uu0n"]
+
+[ext_resource type="Script" path="res://Items/Scripts/item_data.gd" id="1_svw71"]
+[ext_resource type="Texture2D" uid="uid://cricu1rtr657w" path="res://Items/Sprites/items.png" id="2_bimt1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjwsd"]
+atlas = ExtResource("2_bimt1")
+region = Rect2(32, 0, 32, 32)
+
+[resource]
+script = ExtResource("1_svw71")
+name = "Potion"
+description = "Drink this for big gains"
+texture = SubResource("AtlasTexture_hjwsd")
