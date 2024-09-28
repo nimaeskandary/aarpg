@@ -33,10 +33,6 @@ window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="viewport"
 
-[global_group]
-
-Persistent="can implement save and load on these nodes"
-
 [input]
 
 ui_left={

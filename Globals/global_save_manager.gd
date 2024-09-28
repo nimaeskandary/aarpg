@@ -19,12 +19,9 @@ var current_save: Dictionary = {
 
 
 func save_game():
-	#	var data: Dictionary = {}
-	#	for n in get_tree().get_nodes_in_group("Persistent"):
-	#		if n.has_method("save"):
-	#			data[n.get_path()] = n.save()
 	update_player_data()
 	update_scene_path()
+	update_item_data()
 	var file              := FileAccess.open(SAVE_PATH + "save.json", FileAccess.WRITE)
 	var save_json: String =  JSON.stringify(current_save)
 	file.store_line(save_json)
@@ -43,6 +40,7 @@ func load_game():
 	GlobalPlayerManager.set_player_position(Vector2(current_save.player.pos_x, current_save.player.pos_y))
 	GlobalPlayerManager.player.max_hp = current_save.player.max_hp
 	GlobalPlayerManager.player.hp = current_save.player.hp
+	GlobalPlayerManager.INVENTORY_DATA.parse_save_data(current_save.items)
 	GlobalPlayerManager.player.update_hp(0)
 	await GlobalLevelManager.level_loaded_signal
 	game_loaded_signal.emit()
@@ -62,3 +60,7 @@ func update_scene_path():
 		if c is Level:
 			p = c.scene_file_path
 	current_save.scene_path = p
+
+
+func update_item_data():
+	current_save.items = GlobalPlayerManager.INVENTORY_DATA.get_save_data()
