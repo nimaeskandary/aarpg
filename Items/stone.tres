@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://dcllsu38hd561"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://dcllsu38hd561"]
 
 [ext_resource type="Script" path="res://Items/Scripts/item_data.gd" id="1_3iksg"]
+[ext_resource type="Script" path="res://Items/ItemEffects/item_effect.gd" id="1_76t6i"]
 [ext_resource type="Texture2D" uid="uid://cricu1rtr657w" path="res://Items/Sprites/items.png" id="2_hqdpm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otori"]
@@ -12,3 +13,4 @@ script = ExtResource("1_3iksg")
 name = "Stone"
 description = "You can do bicep curls with this"
 texture = SubResource("AtlasTexture_otori")
+effects = Array[ExtResource("1_76t6i")]([])

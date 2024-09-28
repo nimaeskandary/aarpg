@@ -1,8 +1,9 @@
 extends Node
 
-const PLAYER: PackedScene = preload("res://Player/player.tscn")
+const PLAYER: PackedScene           = preload("res://Player/player.tscn")
+const INVENTORY_DATA: InventoryData = preload("res://GUI/PauseMenu/Inventory/player_inventory.tres")
 var player: Player
-var player_spawned: bool  = false
+var player_spawned: bool            = false
 
 
 func _ready() -> void:

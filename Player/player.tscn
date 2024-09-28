@@ -601,7 +601,7 @@ _data = {
 "default": SubResource("Animation_gppkh")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Persistent"]]
 collision_mask = 16
 motion_mode = 1
 wall_min_slide_angle = 0.174533

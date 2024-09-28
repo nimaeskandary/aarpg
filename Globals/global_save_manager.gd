@@ -19,6 +19,10 @@ var current_save: Dictionary = {
 
 
 func save_game():
+	#	var data: Dictionary = {}
+	#	for n in get_tree().get_nodes_in_group("Persistent"):
+	#		if n.has_method("save"):
+	#			data[n.get_path()] = n.save()
 	update_player_data()
 	update_scene_path()
 	var file              := FileAccess.open(SAVE_PATH + "save.json", FileAccess.WRITE)

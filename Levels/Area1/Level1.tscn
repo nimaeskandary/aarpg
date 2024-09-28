@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cn45rshf1m2s"]
+[gd_scene load_steps=12 format=4 uid="uid://cn45rshf1m2s"]
 
 [ext_resource type="PackedScene" uid="uid://bh233s2m54t8y" path="res://TileMaps/Grass-01.tscn" id="1_c8io8"]
 [ext_resource type="Script" path="res://Levels/Scripts/level.gd" id="1_mhsgl"]
@@ -6,6 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bgpb17yyi7xta" path="res://Props/Plants/Plant.tscn" id="3_gfvog"]
 [ext_resource type="PackedScene" uid="uid://bx7ekqqiwtp1f" path="res://Levels/LevelTransition.tscn" id="4_oko20"]
 [ext_resource type="PackedScene" uid="uid://n4w46o3jl8t" path="res://Enemies/Slime/Slime.tscn" id="5_fb80m"]
+[ext_resource type="Resource" uid="uid://dd7fphhb6uu0n" path="res://Items/potion.tres" id="7_4y4i1"]
+[ext_resource type="PackedScene" uid="uid://dkio2afiymmn4" path="res://Items/ItemPickup/ItemPickup.tscn" id="7_oxn30"]
+[ext_resource type="Resource" uid="uid://6s01ry3fwpv3" path="res://Items/gem.tres" id="8_708py"]
+[ext_resource type="Resource" uid="uid://dcllsu38hd561" path="res://Items/stone.tres" id="8_q242v"]
+[ext_resource type="Resource" uid="uid://wp3e103t2mlh" path="res://Items/apple.tres" id="9_k0xqr"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_mhsgl")
@@ -46,6 +51,44 @@ position = Vector2(504, 137)
 
 [node name="Slime4" parent="Enemies" instance=ExtResource("5_fb80m")]
 position = Vector2(360, 291)
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="ItemPickup" parent="Items" instance=ExtResource("7_oxn30")]
+position = Vector2(87, 143)
+item_data = ExtResource("8_708py")
+
+[node name="ItemPickup2" parent="Items" instance=ExtResource("7_oxn30")]
+position = Vector2(139, 160)
+item_data = ExtResource("7_4y4i1")
+
+[node name="ItemPickup3" parent="Items" instance=ExtResource("7_oxn30")]
+position = Vector2(209, 135)
+item_data = ExtResource("7_4y4i1")
+
+[node name="ItemPickup4" parent="Items" instance=ExtResource("7_oxn30")]
+position = Vector2(72, 191)
+item_data = ExtResource("7_4y4i1")
+
+[node name="ItemPickup5" parent="Items" instance=ExtResource("7_oxn30")]
+position = Vector2(231, 176)
+item_data = ExtResource("8_q242v")
+
+[node name="ItemPickup6" parent="Items" instance=ExtResource("7_oxn30")]
+position = Vector2(186, 209)
+item_data = ExtResource("8_q242v")
+
+[node name="ItemPickup7" parent="Items" instance=ExtResource("7_oxn30")]
+position = Vector2(272, 123)
+item_data = ExtResource("8_q242v")
+
+[node name="ItemPickup8" parent="Items" groups=["Persistent"] instance=ExtResource("7_oxn30")]
+position = Vector2(174, 46)
+item_data = ExtResource("9_k0xqr")
+
+[node name="ItemPickup9" parent="Items" instance=ExtResource("7_oxn30")]
+position = Vector2(122, 67)
+item_data = ExtResource("9_k0xqr")
 
 [node name="LevelTransition" parent="." instance=ExtResource("4_oko20")]
 position = Vector2(608, 128)

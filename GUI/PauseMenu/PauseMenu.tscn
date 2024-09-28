@@ -123,3 +123,6 @@ theme_override_font_sizes/font_size = 10
 text = "Drink this for big gains"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 4
